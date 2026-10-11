@@ -1,0 +1,42 @@
+1. Replace Sytem,out.println with logger log
+
+2. Security/Config
+gemini apiwebhook crm url
+Secret
+
+3. Readme + API documentation
+{
+  "name": "Rahul",
+  "email": "rahul@example.com",
+  "company": "ABC",
+  "message": "Interested in your product"
+}
+artitecture model working
+
+
+User
+ ↓
+Spring
+ ↓
+Database
+ ↓
+"HubSpot sync pending"
+ ↓
+Queue / background worker
+ ↓
+HubSpot
+
+PENDING
+   ↓
+Send to HubSpot
+   ↓
+Success → SYNCED
+
+Failure
+   ↓
+Retry
+   ↓
+Retry
+   ↓
+FAILED
+

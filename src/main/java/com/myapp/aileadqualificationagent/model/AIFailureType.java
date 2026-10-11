@@ -1,0 +1,23 @@
+package com.myapp.aileadqualificationagent.model;
+
+public enum AIFailureType {
+    TIMEOUT,
+    RATE_LIMITED,
+    SERVICE_UNAVAILABLE,
+    NETWORK_ERROR,
+    API_ERROR,
+
+    EMPTY_RESPONSE,
+    INVALID_RESPONSE,
+    PARSING_ERROR,
+    MISSING_REQUIRED_FIELD,
+    VALIDATION_ERROR,
+
+    AUTHENTICATION_ERROR,
+    QUOTA_EXCEEDED,
+
+    BUSINESS_RULE_VIOLATION,
+
+    UNKNOWN
+
+}

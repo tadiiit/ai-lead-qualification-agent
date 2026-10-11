@@ -1,0 +1,588 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.sendLead {
+    min-height: 100vh;
+    width: 100%;
+
+    background: #f7f8fc;
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+
+    color: #1f2937;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.sendLeadHeader {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.pageBadge {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.sendLeadHeader h1 {
+    margin: 0;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: #111827;
+}
+
+.sendLeadHeader p {
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+    color: #6b7280;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SOURCE SECTION
+========================================= */
+
+.leadSources {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+.sectionHeader {
+    margin-bottom: 20px;
+}
+
+.sectionHeader h2 {
+    margin: 0;
+
+    font-size: 22px;
+
+    color: #111827;
+}
+
+.sectionHeader p {
+    margin-top: 6px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SOURCE GRID
+========================================= */
+
+.sourceGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   SOURCE CARD
+========================================= */
+
+.sourceCard {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    cursor: pointer;
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            border-color 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+.sourceCard:hover:not(.disabled) {
+    transform: translateY(-3px);
+
+    border-color: #93c5fd;
+
+    box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+/* Active */
+
+.sourceCard.active {
+    border-color: #2563eb;
+
+    box-shadow:
+            0 0 0 2px rgba(37, 99, 235, 0.08);
+}
+
+
+/* Disabled */
+
+.sourceCard.disabled {
+    cursor: default;
+
+    opacity: 0.75;
+
+    background: #fafafa;
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.sourceTop {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.sourceIcon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+
+    color: #2563eb;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.status.available {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+.status.comingSoon {
+    background: #f3f4f6;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.sourceCard h3 {
+    margin: 0 0 8px;
+
+    font-size: 17px;
+
+    color: #111827;
+}
+
+.sourceCard p {
+    margin: 0;
+
+    min-height: 48px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   CARD ACTION
+========================================= */
+
+.sourceAction {
+    margin-top: 18px;
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MANUAL FORM SECTION
+========================================= */
+
+.manualLeadSection {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 45px auto 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   MANUAL HEADER
+========================================= */
+
+.activeBadge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.manualHeader h2 {
+    margin: 0;
+
+    font-size: 24px;
+
+    color: #111827;
+}
+
+.manualHeader p {
+    margin: 8px 0 25px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.manualLeadForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.formGroup {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.formGroup label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    color: #111827;
+
+    background: #ffffff;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.formGroup textarea {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+            0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.manualLeadForm button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 13px 20px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.1s ease;
+}
+
+.manualLeadForm button:hover {
+    background: #1d4ed8;
+}
+
+.manualLeadForm button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   COMING SOON SECTION
+========================================= */
+
+.comingSoonSection {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 35px auto 0;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background: #eef4ff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 14px;
+}
+
+.comingSoonIcon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.comingSoonSection h2 {
+    margin: 0;
+
+    font-size: 20px;
+
+    color: #1e3a8a;
+}
+
+.comingSoonSection p {
+    margin: 10px auto 0;
+
+    max-width: 550px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .sourceGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .sendLeadHeader h1 {
+        font-size: 34px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .sendLead {
+        padding: 35px 14px;
+    }
+
+    .sendLeadHeader {
+        margin-bottom: 30px;
+    }
+
+    .sendLeadHeader h1 {
+        font-size: 28px;
+    }
+
+    .sendLeadHeader p {
+        font-size: 14px;
+    }
+
+    .sourceGrid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .sourceCard {
+        padding: 18px;
+    }
+
+    .sourceCard p {
+        min-height: auto;
+    }
+
+    .manualLeadSection {
+        margin-top: 30px;
+
+        padding: 22px 18px;
+    }
+
+    .manualHeader h2 {
+        font-size: 21px;
+    }
+
+    .comingSoonSection {
+        padding: 25px 18px;
+    }
+
+    .comingSoonSection h2 {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .sendLeadHeader h1 {
+        font-size: 24px;
+    }
+
+    .sourceCard {
+        padding: 16px;
+    }
+
+    .manualLeadSection {
+        padding: 18px 14px;
+    }
+}
