@@ -1,19 +1,13 @@
 package com.myapp.aileadqualificationagent.conroller;
 
 
-import com.myapp.aileadqualificationagent.dto.EvaluationResponse;
 import com.myapp.aileadqualificationagent.dto.LeadPageResponse;
 import com.myapp.aileadqualificationagent.dto.LeadRequest;
 import com.myapp.aileadqualificationagent.model.*;
-import com.myapp.aileadqualificationagent.model.user.User;
-import com.myapp.aileadqualificationagent.repository.EvaluationResultRepository;
-import com.myapp.aileadqualificationagent.repository.LeadRepository;
 import com.myapp.aileadqualificationagent.service.AIFailureService;
 import com.myapp.aileadqualificationagent.service.LeadEvaluationService;
 import com.myapp.aileadqualificationagent.service.LeadService;
-import com.myapp.aileadqualificationagent.service.WebhookDispacherService;
 import jakarta.validation.Valid;
-import org.springframework.security.core.AuthenticatedPrincipal;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
@@ -26,13 +20,11 @@ public class LeadController {
     private final LeadEvaluationService evaluationService;
     private final LeadService leadService;
     private final AIFailureService failureService;
-    private final WebhookDispacherService webhookDispacherService;
 
-    public LeadController(LeadEvaluationService evaluationService, LeadService leadService, AIFailureService failureService, WebhookDispacherService webhookDispacherService) {
+    public LeadController(LeadEvaluationService evaluationService, LeadService leadService, AIFailureService failureService) {
         this.evaluationService = evaluationService;
         this.leadService = leadService;
         this.failureService = failureService;
-        this.webhookDispacherService = webhookDispacherService;
     }
 
     @PostMapping("/lead")
@@ -51,7 +43,6 @@ public class LeadController {
        System.out.println("Lead rresponse with failure : " + leadEvaluation);
        // LeadEvaluation evaluation = evaluationService.evaluatedLead(request.getMessage());
         System.out.println("Getting saving the and sending to crm ");
-       webhookDispacherService.sendWebhookifHot(leadInquiry , leadEvaluation);
 
          //Sending the lead
 
@@ -132,9 +123,9 @@ public class LeadController {
     }
 
     @GetMapping("/webhookReview")
-    public List<WebhookDelivery> getCRMData(){
+    public void getCRMData(){
         System.out.println("The response of webhook are: ");
-        return leadService.getCRMData();
+        leadService.getCRMData();
     }
 
 

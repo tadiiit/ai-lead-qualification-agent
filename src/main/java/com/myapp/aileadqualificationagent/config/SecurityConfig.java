@@ -4,6 +4,7 @@ package com.myapp.aileadqualificationagent.config;
 import com.myapp.aileadqualificationagent.service.auth.CustomDetailsService;
 import com.myapp.aileadqualificationagent.service.auth.JwtFilter;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -36,12 +37,16 @@ public class SecurityConfig {
         this.customDetailsService = customDetailsService;
     }
 
+    @Value("${frontend.url}")
+    private String frontendUrl;
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                List.of("http://localhost:5173")
+               List.of("http://localhost:5173")
+              //  List.of(frontendUrl)
         );
 
         configuration.setAllowedMethods(

@@ -8,7 +8,6 @@ import com.myapp.aileadqualificationagent.model.*;
 import com.myapp.aileadqualificationagent.model.user.User;
 import com.myapp.aileadqualificationagent.repository.EvaluationResultRepository;
 import com.myapp.aileadqualificationagent.repository.LeadRepository;
-import com.myapp.aileadqualificationagent.repository.WebhookDeliveryRepository;
 import com.myapp.aileadqualificationagent.repository.user.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
@@ -24,12 +23,10 @@ import java.util.List;
 public class LeadService {
     private final LeadRepository leadRepository;
     private final com.myapp.aileadqualificationagent.repository.EvaluationResultRepository evaluationResultRepository;
-    private final WebhookDeliveryRepository webhookDeliveryRepository;
     private final UserRepository userRepository;
-    public LeadService(LeadRepository leadRepository, EvaluationResultRepository evaluationResultRepository, WebhookDeliveryRepository webhookDeliveryRepository, UserRepository userRepository) {
+    public LeadService(LeadRepository leadRepository, EvaluationResultRepository evaluationResultRepository, UserRepository userRepository) {
         this.leadRepository = leadRepository;
         this.evaluationResultRepository = evaluationResultRepository;
-        this.webhookDeliveryRepository = webhookDeliveryRepository;
         this.userRepository = userRepository;
     }
 
@@ -382,7 +379,7 @@ public class LeadService {
         );
     }
 
-    public List<WebhookDelivery> getCRMData() {
-       return webhookDeliveryRepository.findAll();
+    public void getCRMData() {
+
     }
 }
