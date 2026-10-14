@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import LeadTable from "../components/LeadTable.jsx";
 import LeadDetails from "../components/LeadDetails.jsx";
+import API_BASE_URL from "../API_BASE_URL.js";
 
 
 function HotLeads() {
@@ -24,7 +25,7 @@ function HotLeads() {
             return;
         }
 
-        fetch(`/api/hotlead?page=${page}`, {
+        fetch(`${API_BASE_URL}/api/hotlead?page=${page}`, {
             headers: {
                 "Authorization": `Bearer ${token}`,
             },

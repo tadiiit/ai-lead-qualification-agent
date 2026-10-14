@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import API_BASE_URL from "../../API_BASE_URL.js";
+
+const API_URL = `${API_BASE_URL}/api/integrations/hubspot`;
 
 export default function DisconnectCard() {
 
@@ -20,7 +23,7 @@ export default function DisconnectCard() {
             setLoading(true);
 
             const response = await fetch(
-                "http://localhost:8080/api/integrations/hubspot/disconnect",
+                `${API_URL}/disconnect`,
                 {
                     method: "DELETE",
                     credentials: "include"

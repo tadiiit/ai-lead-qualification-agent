@@ -3,8 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { saveSession } from "../services/auth.jsx"
 import { useAuth } from "../services/AuthContext.jsx";
 import "./Auth.css";
+import API_BASE_URL from "../API_BASE_URL.js";
 
-const API_URL = "http://localhost:8090/api/auth";
+const API_URL = `${API_BASE_URL}/api/auth`;
 
 function Login() {
     const navigate = useNavigate();

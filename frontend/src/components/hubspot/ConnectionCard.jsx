@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import API_BASE_URL from "../../API_BASE_URL.js";
 
-const API_URL = "http://localhost:8090";
+const API_URL = `${API_BASE_URL}`;
+ //const API_URL = ${process.env.React_APP_API_URL}
 
 export default function ConnectionCard() {
 

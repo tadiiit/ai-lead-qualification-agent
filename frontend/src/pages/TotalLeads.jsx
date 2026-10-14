@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import LeadTable from "../components/LeadTable.jsx";
 import LeadDetails from "../components/LeadDetails.jsx";
 import "./Leads.css";
+import API_BASE_URL from "../API_BASE_URL.js";
 
 function TotalLeads() {
 
@@ -24,7 +25,7 @@ function TotalLeads() {
             return;
         }
 
-        fetch(`/api/totallead?page=${page}` ,{
+        fetch(`${API_BASE_URL}/api/totallead?page=${page}` ,{
             headers: {
                 Authorization: `Bearer ${token}`
             },

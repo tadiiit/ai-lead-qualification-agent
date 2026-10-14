@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./SubmitLead.css"
+import API_BASE_URL from "../API_BASE_URL.js";
 
 function SubmitLead() {
 
@@ -32,7 +33,7 @@ function SubmitLead() {
             console.error("Please log in first , jwt token not found");
             return;
         }
-        fetch("/api/lead", {
+        fetch(`${API_BASE_URL}/api/lead`, {
             method: "POST",
             headers: {
                  Authorization: `Bearer ${token}` ,

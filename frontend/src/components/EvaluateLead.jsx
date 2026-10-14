@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API_BASE_URL from "../API_BASE_URL.js";
 
 function EvaluateLead({ lead, onClose }) {
     const evaluation = lead.evaluations?.[0];
@@ -70,7 +71,7 @@ function EvaluateLead({ lead, onClose }) {
             setIsSubmitting(true);
 
             const response = await fetch(
-                `/api/leadevaluation/${lead.id}`,
+                `${API_BASE_URL}/api/leadevaluation/${lead.id}`,
                 {
                     method: "POST",
                     headers: {

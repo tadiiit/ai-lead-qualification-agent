@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import LeadTable from "../components/LeadTable.jsx";
 import LeadDetails from "../components/LeadDetails.jsx";
 import EvaluateLead from "../components/EvaluateLead.jsx";
+import API_BASE_URL from "../API_BASE_URL.js";
 
 function AIFailure(){
     const [totalLeads, setTotalLeads] = useState(0);
@@ -22,7 +23,7 @@ function AIFailure(){
             console.error("Please log in first. JWT token not found.");
             return;
         }
-        fetch(`/api/warmlead?page=${page}` , {
+        fetch(`${API_BASE_URL}/api/warmlead?page=${page}` , {
             headers: {
                 "Authorization": `Bearer ${token}`,
             },

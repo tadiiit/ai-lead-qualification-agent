@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import LeadTable from "../components/LeadTable.jsx";
 import LeadDetails from "../components/LeadDetails.jsx";
+import API_BASE_URL from "../API_BASE_URL.js";
 
 function CRMFailure(){
     const [totalLeads, setTotalLeads] = useState(0);
@@ -14,7 +15,7 @@ function CRMFailure(){
     }
 
     function getLeads(page) {
-        fetch(`/api/hotlead?page=${page}`)
+        fetch(`${API_BASE_URL}/api/hotlead?page=${page}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import LeadTable from "../components/LeadTable.jsx";
 import LeadDetails from "../components/LeadDetails.jsx";
+import API_BASE_URL from "../API_BASE_URL.js";
 
 function WarmLeads() {
 
@@ -24,7 +25,7 @@ function WarmLeads() {
             return;
         }
 
-        fetch(`/api/warmlead?page=${page}` ,{
+        fetch(`${API_BASE_URL}/api/warmlead?page=${page}` ,{
             headers:{
                 "Authorization": `Bearer ${token}`,
             },

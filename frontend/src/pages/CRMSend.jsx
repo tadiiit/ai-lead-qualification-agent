@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import LeadTable from "../components/LeadTable.jsx";
 import LeadDetails from "../components/LeadDetails.jsx";
+import API_BASE_URL from "../API_BASE_URL.js";
 
 function CRMSend(){
     const [totalLeads, setTotalLeads] = useState(0);
@@ -14,7 +15,7 @@ function CRMSend(){
     }
 
     function getLeads(page) {
-        fetch(`/api/sendCRM?page=${page}`)
+        fetch(`${API_BASE_URL}/api/sendCRM?page=${page}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);

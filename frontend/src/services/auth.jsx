@@ -1,5 +1,6 @@
+import API_BASE_URL from "../API_BASE_URL.js";
 
-const API_URL = "http://localhost:8090/api/auth";
+const API_URL = `${API_BASE_URL}/api/auth`;
 
 export function getToken() {
     return localStorage.getItem("jwtToken");
